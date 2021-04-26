@@ -1,0 +1,13 @@
+<script src="http://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<button onclick='get_todos()'>LIST</button>
+<br>
+<script>
+    function get_todos(){
+        axios.get('/todo')
+        .then(function(response){
+            var result_area = document.getElementById('result');
+            result_area.innerText = JSON.stringify(response.data);
+        });
+    }
+</script>
+<textarea id = "result" cols ="60" rows="10"></textarea>
